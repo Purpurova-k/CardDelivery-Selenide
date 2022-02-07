@@ -41,7 +41,6 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=notification] .notification__content").shouldBe(visible, Duration.ofSeconds(15)).
                 shouldHave(exactText("Встреча успешно забронирована на " + deliveryDate));
-
     }
 
 
