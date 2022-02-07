@@ -45,7 +45,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidCityFieldEmpty() {
+    public void shouldNotSendFormInvalidCityFieldEmpty() {
 
         open("http://localhost:9999/");
 
@@ -63,7 +63,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidCityFieldNotAdministrativeCenter() {
+    public void shouldNotSendFormInvalidCityFieldNotAdministrativeCenter() {
 
         open("http://localhost:9999/");
 
@@ -82,7 +82,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidCityFieldEnglish() {
+    public void shouldNotSendFormInvalidCityFieldEnglish() {
 
         open("http://localhost:9999/");
 
@@ -120,7 +120,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidDateFieldEmpty() {
+    public void shouldNotSendFormInvalidDateFieldEmpty() {
 
         open("http://localhost:9999/");
 
@@ -139,7 +139,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidNameFieldEmpty() {
+    public void shouldNotSendFormInvalidNameFieldEmpty() {
 
         open("http://localhost:9999/");
 
@@ -157,7 +157,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidNameFieldEnglish() {
+    public void shouldNotSendFormInvalidNameFieldEnglish() {
 
         open("http://localhost:9999/");
 
@@ -176,7 +176,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidNameFieldWithNumbers() {
+    public void shouldNotSendFormInvalidNameFieldWithNumbers() {
 
         open("http://localhost:9999/");
 
@@ -195,7 +195,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidPhoneFieldEmpty() {
+    public void shouldNotSendFormInvalidPhoneFieldEmpty() {
 
         open("http://localhost:9999/");
 
@@ -213,7 +213,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidPhoneFieldLetters() {
+    public void shouldNotSendFormInvalidPhoneFieldLetters() {
 
         open("http://localhost:9999/");
 
@@ -232,7 +232,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidPhoneFieldFewNumbers() {
+    public void shouldNotSendFormInvalidPhoneFieldFewNumbers() {
 
         open("http://localhost:9999/");
 
@@ -251,7 +251,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void invalidPhoneFieldWithoutPlus() {
+    public void shouldNotSendFormInvalidPhoneFieldWithoutPlus() {
 
         open("http://localhost:9999/");
 
@@ -270,7 +270,7 @@ public class CardDeliveryFormTest {
 
 
     @Test
-    public void uncheckedCheckbox() {
+    public void shouldNotSendFormUncheckedCheckbox() {
 
         open("http://localhost:9999/");
 
