@@ -22,8 +22,6 @@ public class CardDeliveryFormTest {
     String name = faker.name().fullName();
     String phone = faker.numerify("+79#########");
 
-    String tele = faker.phoneNumber().phoneNumber();
-
     String deliveryDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
 
@@ -34,7 +32,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Москва");
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val(phone);
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -50,7 +48,7 @@ public class CardDeliveryFormTest {
         open("http://localhost:9999/");
 
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val(phone);
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -69,7 +67,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Азов");
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val(phone);
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -88,7 +86,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Moscow");
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val(phone);
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -100,25 +98,6 @@ public class CardDeliveryFormTest {
     }
 
 
-//    @Test
-//    public void invalidDateFieldEmpty() {
-//
-//        open("http://localhost:9999/");
-//
-//        $("[data-test-id=city] input").val("Москва");
-//        $("[data-test-id=date] input").clear();
-//        $("[data-test-id=name] input").val(name);
-//        $("[data-test-id=phone] input").val(phone);
-//        $("[data-test-id=agreement] span").click();
-//        $$("button").find(exactText("Забронировать")).click();
-//
-//        String expectedText = "Неверно введена дата";
-//        String actualText = $("[data-test-id=date] .input__sub").getText().trim();
-//
-//        assertEquals(expectedText, actualText);
-//    }
-
-
     @Test
     public void shouldNotSendFormInvalidDateFieldEmpty() {
 
@@ -126,7 +105,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Москва");
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val(phone);
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -201,7 +180,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Москва");
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
 
@@ -219,7 +198,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Москва");
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val("телефон");
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -238,7 +217,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Москва");
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val("+7999888");
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -257,7 +236,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Москва");
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val("79998887766");
         $("[data-test-id=agreement] span").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -276,7 +255,7 @@ public class CardDeliveryFormTest {
 
         $("[data-test-id=city] input").val("Москва");
         $("[data-test-id=date] input").doubleClick().val(deliveryDate);
-        $("[data-test-id=name] input").val(name);
+        $("[data-test-id=name] input").val(name.replace('ё', 'е'));
         $("[data-test-id=phone] input").val(phone);
         $$("button").find(exactText("Забронировать")).click();
 
